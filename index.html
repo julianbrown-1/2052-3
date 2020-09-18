@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -15,37 +14,104 @@
 <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
 
 
-  <title>CodePen - 2052-3</title>
+  <title>CodePen - 2051-3</title>
   
   
   
   
+<style>
+body{
+  background-color: lightgrey;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://wallpapercave.com/wp/wp4585901.png") 
+}
+ol {
+ 
+}
+.correct{
+  background:green;
+}
+
+.incorrect{
+  background: red;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
 
   
   
-  
-  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
 
 </head>
 
 <body translate="no" >
-  <audio id ="goodjob" controls>
-  <source src="https://julianbrown-1.github.io/2052-3/goodjob.m4a" type="audio/ogg">
-  <source src="horse.mp3" type="audio/mpeg">
-  Your browser does not support the audio tag.
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<audio id="sad" controls>
+  <source src="https://math.seattleacademy.org/garyanderson/snd/sad.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag
 </audio>
-<button id="playme">Play Me</button>
+
+<img src= https://imagesmtv-a.akamaihd.net/uri/mgid:ao:image:mtv.com:250951?height=1928&width=3427&format=jpg&quality=.7 width="300"/>
+
+<h1 style="color:white;">Math Quiz (ft. Playboi Carti)</h1>
+
+<b style="color:white">
   
+<div>Timer: <span id="theTime">0</span>
+  
+<ol>
+  <li>2 + 2 = <input data-correct="4" /></li>
+  <li>6 / 3 = <input data-correct="2" /></li>
+  <li>What is the square root of 16? = <input data-correct="4"/>
+  <li>What is my birth month? = <input data-correct="july"/>
+  <li>What is my favorite color? = <input data-correct="blue"/>
+  <li>What state has fires? = <input data-correct="california"/>
+  <li>Covid-  = <input data-correct="19"/>
+  <li>Current vice president? = <input data-correct="mike pence"/>
+  <li>How many siblings do I have? = <input data-correct="1"/>
+
+</li>
+  
+<li>Who is the President = <input data-correct="Trump"/></li>
+
+</ol>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
   
       <script id="rendered-js" >
-let goodjob = document.getElementById("goodjob");
-
-function playGoodJob(evt){
-    goodjob.play();
+let timer = 0;
+function addSecond() {
+  timer = timer + 1;
+  $("#theTime").text(timer);
 }
 
-$("#playme").click(playGoodJob)
+setInterval(addSecond, 1000);
+
+console.clear();
+
+$("input").change(onChange);
+
+function onChange(evt) {
+  let correct = $(this).data("correct");
+  let response = $(this).val();
+  if (correct == response) {
+    $(this).removeClass("incorrect").addClass("correct");
+  } else {
+    $(this).removeClass("correct").addClass("incorrect");
+  }
+}
+//# sourceURL=pen.js
     </script>
 
   
@@ -53,4 +119,3 @@ $("#playme").click(playGoodJob)
 </body>
 
 </html>
- 
